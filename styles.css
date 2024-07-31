@@ -126,3 +126,40 @@ body {
         font-size: 0.8em; /* Smaller font size */
     }
 }
+.highlight {
+    background-color: rgb(177, 177, 12);
+}
+.search-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    display: none;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+    margin-top: 20px;
+}
+
+.search-container input.visible {
+    display: inline-block;
+}
+
+.search-container button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.search-container button img {
+    width: 40px;
+    height: 40px;
+    margin-top: 20px;
+}
