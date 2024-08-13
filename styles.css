@@ -1,165 +1,161 @@
-@font-face {
-    font-family: 'Fontcraft Courier Heavy';
-    src: url('path/to/fontcraft-courier-heavy.woff2') format('woff2'),
-         url('path/to/fontcraft-courier-heavy.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 body {
-    background-color: #000000;
-    font-family: sans-serif;
-    color: aliceblue;
-    margin-top: 10px;
-}
-
-.text-gradient {
-    background-image: linear-gradient(to right, white, #8f3030, #cf1010, red);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
-    font-family: 'Fontcraft Courier Heavy', monospace;
-    font-size: 2em; /* Adjusted for responsiveness */
-    text-align: center; /* Centered for better appearance */
-    margin: 20px auto;
-    width: 90%;
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.text-gradient {
+    background: linear-gradient(45deg, #ff6f61, #de6262);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .sub_header {
-    font-family: 'Fontcraft Courier Heavy', monospace;
-    font-size: 1.5em; /* Adjusted for responsiveness */
-    text-align: center; /* Centered for better appearance */
-    margin: 20px auto;
-    width: 90%;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
+}
+
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: none;
+}
+
+.search-container button img {
+    width: 20px;
+    height: 20px;
+}
+
+.disblog {
+    width: 60%;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+p {
+    margin: 15px 0;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.image-container p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.comment-section {
+    margin: 30px 0;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.comment-section textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comment-section button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 .gallery {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    margin: auto; /* Center the gallery horizontally */
-    margin-bottom: 100px;
+    margin: 20px auto;
+    text-align: center;
 }
 
 .gallery-wrapper {
     display: flex;
-    animation: scroll 20s linear infinite;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
-.gallery img {
-    width: 100%; /* Adjusted for responsiveness */
-    max-width: 300px; /* Limits the max width for larger screens */
-    margin: 0 10px;
+.gallery-wrapper img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
     border-radius: 10px;
+    transition: transform 0.2s ease;
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-    /* Add more keyframes to make the slideshow go faster */
-    50% {
-        transform: translateX(-50%);
-    }
-    75% {
-        transform: translateX(-75%);
-    }
+.gallery-wrapper img:hover {
+    transform: scale(1.05);
 }
 
-.disblog {
-    font-family: sans-serif;
-    font-size: 1em; /* Adjusted for responsiveness */
-    text-align: justify;    
-    margin: 0 auto; /* Centered for better appearance */
-    width: 90%;
-    border: 5px solid rgb(82, 82, 82);
+footer {
+    text-align: center;
     padding: 20px;
-}
-
-.title {
-    color: #9b0000;
-}
-
-.keypoints {
-    color: #ff0000;
-}
-
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-    .header, .sub_header {
-        font-size: 1.5em; /* Smaller font size for smaller screens */
-        margin: 10px auto;
-    }
-    
-    .gallery img {
-        width: 100%; /* Full width on smaller screens */
-    }
-    
-    .disblog {
-        font-size: 0.9em; /* Slightly smaller font size */
-        margin: 10px;
-        width: auto; /* Full width on smaller screens */
-    }
-}
-
-/* Responsive design for extra small screens */
-@media (max-width: 480px) {
-    .header, .sub_header {
-        font-size: 1.2em; /* Even smaller font size */
-    }
-    
-    .disblog {
-        font-size: 0.8em; /* Smaller font size */
-    }
-}
-.highlight {
-    background-color: rgb(177, 177, 12);
-}
-.search-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-}
-
-.search-container input {
-    display: none;
-    padding: 5px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 5px;
-    margin-top: 20px;
-}
-
-.search-container input.visible {
-    display: inline-block;
-}
-
-.search-container button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.search-container button img {
-    width: 40px;
-    height: 40px;
-    margin-top: 20px;
+    background: #333;
+    color: #fff;
+    margin-top: 40px;
 }
