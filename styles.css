@@ -7,11 +7,6 @@ body {
     padding: 0;
 }
 
-.highlight {
-    background-color: yellow;
-    font-weight: bold;
-}
-
 .header {
     background: #333;
     color: #fff;
@@ -56,11 +51,13 @@ body {
 }
 
 .disblog {
-    width: 60%;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px; /* Control max width for larger screens */
+    margin: 0 auto; /* Center the content */
     background: #fff;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 .title {
@@ -85,20 +82,15 @@ ul {
 
 .image-container {
     text-align: center;
-    margin: 20px 0;
+    margin: 20px auto;
+    width: 100%; /* Use full width of the container */
+    max-width: 800px; /* Limit the max-width */
 }
 
 .image-container img {
     width: 100%;
-    max-width: 600px;
     height: auto;
     border-radius: 10px;
-}
-
-.image-container p {
-    font-size: 14px;
-    color: #666;
-    margin-top: 5px;
 }
 
 .comment-section {
@@ -133,30 +125,6 @@ ul {
     margin-top: 10px;
 }
 
-.gallery {
-    margin: 20px auto;
-    text-align: center;
-}
-
-.gallery-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-.gallery-wrapper img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.2s ease;
-}
-
-.gallery-wrapper img:hover {
-    transform: scale(1.05);
-}
-
 footer {
     text-align: center;
     padding: 20px;
@@ -165,9 +133,47 @@ footer {
     margin-top: 40px;
 }
 
-.comment {
-    padding: 10px;
-    background-color: #f1f1f1;
-    border-radius: 5px;
-    margin-top: 10px;
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .disblog {
+        padding: 20px;
+    }
+
+    .image-container img {
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .disblog {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .image-container img {
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .disblog {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .image-container img {
+        border-radius: 5px;
+    }
+
+    .sub_header {
+        font-size: 20px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
 }
