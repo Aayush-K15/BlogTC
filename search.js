@@ -1,21 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById("search-input");
     const blogContent = document.querySelector(".disblog");
-    const originalContent = blogContent.innerHTML; // Store the original content
+    const originalContent = blogContent.innerHTML; 
 
     function search() {
         const query = searchInput.value.toLowerCase().trim();
 
-        // Reset to original content before applying new highlights
         blogContent.innerHTML = originalContent;
 
-        // Only proceed if query is not empty
         if (query) {
             const regex = new RegExp(query, "gi");
             const highlightedContent = blogContent.innerHTML.replace(regex, match => `<span class="highlight">${match}</span>`);
             blogContent.innerHTML = highlightedContent;
 
-            // Scroll to the first highlighted result
             const firstHighlight = document.querySelector(".highlight");
             if (firstHighlight) {
                 firstHighlight.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -32,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Event listener for Enter key on search input
     searchInput.addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
             search();
@@ -41,4 +37,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.search = search;
     window.toggleSearch = toggleSearch;
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const commentForm = document.getElementById("comment-form");
+    const commentsContainer = document.getElementById("comments-container");
+
+    commentForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form from submitting
+
+        const commentText = document.getElementById("comment").value.trim();
+
+        if (commentText) {
+            // Create a new comment element
+            const newComment = document.createElement("p");
+            newComment.textContent = commentText;
+            newComment.classList.add("comment");
+
+            // Append the new comment to the comments container
+            commentsContainer.appendChild(newComment);
+
+            // Clear the comment input
+            document.getElementById("comment").value = "";
+        }
+    });
 });
