@@ -52,8 +52,8 @@ body {
 
 .disblog {
     width: 100%;
-    max-width: 1200px; /* Control max width for larger screens */
-    margin: 0 auto; /* Center the content */
+    max-width: 1200px;
+    margin: 0 auto;
     background: #fff;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
