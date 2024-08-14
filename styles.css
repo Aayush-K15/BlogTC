@@ -14,11 +14,6 @@ body {
     text-align: center;
 }
 
-.text-gradient {
-    background: linear-gradient(45deg, #ff6f61, #de6262);
-    -webkit-background-clip: text;
-    color: transparent;
-}
 
 .sub_header {
     text-align: center;
@@ -29,6 +24,9 @@ body {
 .search-container {
     text-align: center;
     margin-bottom: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .search-container input[type="text"] {
@@ -40,7 +38,7 @@ body {
 .search-container button {
     padding: 10px;
     cursor: pointer;
-    background-color: #333;
+
     color: #fff;
     border: none;
 }
@@ -58,6 +56,7 @@ body {
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+
 }
 
 .title {
@@ -79,19 +78,49 @@ ul {
     list-style-type: disc;
     margin-left: 20px;
 }
-
-.image-container {
-    text-align: center;
-    margin: 20px auto;
-    width: 100%; /* Use full width of the container */
-    max-width: 800px; /* Limit the max-width */
+.image-container-main {
+    justify-content: center;
+    align-items: center; /* Optional: vertically centers the image */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
 }
 
-.image-container img {
-    width: 100%;
-    height: auto;
+
+.image-container-main img {
+    max-width: 80%;
+
     border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    display: block;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+/* Flexbox for Images Side by Side */
+.image-container {
+    display: flex;
+    justify-content: space-between; /* Space between the images */
+    align-items: center; /* Aligns images to the center vertically */
+    gap: 10px; /* Space between the images */
+    margin: 20px auto;
+    max-width: 80%; /* Ensures the container is flexible */
+    flex-wrap: wrap; /* Allows images to wrap on smaller screens */
+}
+
+.image-wrapper {
+    flex: 1 1 45%; /* Images take up about 45% of the container width */
+    text-align: center; /* Centers the text below each image */
+}
+
+.image-wrapper img {
+    width: 100%; /* Ensures images scale down to fit within their container */
+    height: 100%; /* Keeps the image's aspect ratio */
+    border-radius: 10px; /* Adds rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
 
 .comment-section {
     margin: 30px 0;
@@ -150,8 +179,12 @@ footer {
         padding: 15px;
     }
 
-    .image-container img {
-        border-radius: 5px;
+    .image-container {
+        flex-direction: column; /* Stacks images vertically on smaller screens */
+    }
+
+    .image-wrapper {
+        width: 100%; /* Images take up full width on smaller screens */
     }
 }
 
@@ -159,10 +192,6 @@ footer {
     .disblog {
         width: 100%;
         padding: 10px;
-    }
-
-    .image-container img {
-        border-radius: 5px;
     }
 
     .sub_header {
@@ -175,5 +204,29 @@ footer {
 
     h2 {
         font-size: 20px;
+    }
+
+    .image-container {
+        flex-direction: column; /* Stacks images on smaller screens */
+    }
+
+    .image-container img {
+        border-radius: 5px;
+    }
+}
+
+#disqus_thread {
+    margin: 20px auto;  /* Adds margin around the Disqus container */
+    max-width: 81%;  /* Maximum width for the comments section */
+    padding: 20px;  /* Adds space inside the container */
+    background-color: #f9f9f9;  /* Adds a background color */
+    border-radius: 10px;  /* Rounds the corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);  /* Adds a subtle shadow */
+}
+
+@media (max-width: 600px) {
+    #disqus_thread {
+        max-width: 90%;  /* Allows the container to be more flexible on small screens */
+        padding: 10px;  /* Reduces padding for small screens */
     }
 }
