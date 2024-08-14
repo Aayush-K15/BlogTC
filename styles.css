@@ -26,7 +26,8 @@ body {
     margin-bottom: 20px;
     align-items: center;
     display: flex;
-    justify-content: center;
+    justify-content: right;
+    margin-right: 142px;
 }
 
 .search-container input[type="text"] {
